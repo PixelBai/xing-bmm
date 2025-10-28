@@ -79,7 +79,7 @@ export function NavUser() {
                 href={PageRoutes.Public.INDEX}
                 startContent={<span className={cn(IconNames.HOME, 'text-base')} />}
               >
-                BMM 首页
+                星点之家导航 首页
               </ListboxItem>
             </ListboxSection>
             <ListboxItem

@@ -35,7 +35,7 @@ export default function Page() {
 
   const [state, setState] = useSetState({
     isRedirecting: false,
-    showBg: true,
+    showBg: false,
     isRegisterMode: false,
     loginRegisterLoading: false,
     authError: null as null | { title: string; desc: string },
