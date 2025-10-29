@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     WEBSITE_NAME +
     ' - 你的智能书签管家！支持 AI 解析网站信息，自动生成标签，跨设备同步书签。高效管理你的收藏夹，探索开发者精选资源，支持明暗双主题与多端适配。',
   icons: Assets.LOGO_SVG,
-  applicationName: '星点之家导航',
+  applicationName: '星点之家',
   keywords: WEBSITE_KEYWORDS,
   robots: { index: true, follow: true },
 }

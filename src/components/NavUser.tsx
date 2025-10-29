@@ -79,7 +79,7 @@ export function NavUser() {
                 href={PageRoutes.Public.INDEX}
                 startContent={<span className={cn(IconNames.HOME, 'text-base')} />}
               >
-                星点之家导航 首页
+                星点之家 首页
               </ListboxItem>
             </ListboxSection>
             <ListboxItem
