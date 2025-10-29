@@ -1,13 +1,13 @@
-import nextConst from 'next/constants.js';
-import { checkEnvs, tryLoadParentGitRepoEnv } from './scripts/utils.mjs';
+import nextConst from 'next/constants.js'
+import { checkEnvs, tryLoadParentGitRepoEnv } from './scripts/utils.mjs'
 
 async function tryLoadCodeInspector() {
   if (process.env.NODE_ENV !== 'development') return null
-  const { codeInspectorPlugin } = await import('code-inspector-plugin');
+  const { codeInspectorPlugin } = await import('code-inspector-plugin')
   return codeInspectorPlugin({
     bundler: 'webpack',
     hideDomPathAttr: true,
-    editor: process.env.CODE_INSPECTOR_EDITOR || undefined
+    editor: process.env.CODE_INSPECTOR_EDITOR || undefined,
   })
 }
 
@@ -39,18 +39,20 @@ export default async function setup(phase) {
       // https://github.com/vercel/next.js/discussions/39705
       // fix: edge 环境无法加载环境变量
       if (nextRuntime === 'edge') {
-        config.plugins.push(new webpack.DefinePlugin({
-          "process.env.AUTH_SECRET": JSON.stringify(process.env.AUTH_SECRET),
-        }))
+        config.plugins.push(
+          new webpack.DefinePlugin({
+            'process.env.AUTH_SECRET': JSON.stringify(process.env.AUTH_SECRET),
+          })
+        )
       }
       return config
     },
     experimental: {
-      serverActions: { allowedOrigins: [domainHost] }
+      serverActions: { allowedOrigins: [domainHost] },
     },
     typescript: {
       ignoreBuildErrors: Boolean(process.env.IGNORE_BUILD_ERRORS),
-    }
+    },
   }
   return nextConfig
 }
